@@ -20,3 +20,7 @@ footer {
     
     padding-left: 60px;
 }
+
+#zoneSelection div.joueur {
+    cursor: pointer;
+}

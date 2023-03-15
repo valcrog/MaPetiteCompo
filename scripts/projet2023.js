@@ -90,7 +90,8 @@ const changeFormation = function(){
  * @return {Boolean} - true si la formation est valide, false sinon
  */
 const verifFormation = function(formation){
-    //TODO
+    let [def, mid, atk] = formation.split("").map(element => parseInt(element)); //on convertit tous les éléments de formation en un Array de nombres
+    return (def >= 3 && def <= 5 && mid >= 3 && mid <= 5 && atk >= 1 && atk <= 3 && def+mid+atk == 10); //vérification de la somme et des bornes
 }
 
 

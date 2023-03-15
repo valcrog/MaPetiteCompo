@@ -184,7 +184,14 @@ const selectionneJoueur = function(){
  * @returns {HTMLElement || null} - une div de class "positions" disponible dans cette ligne
  */
 const trouveEmplacement = function(ligne){
-    //TODO
+    const emplacements = ligne.children;
+    for (let emplacement of emplacements) {
+        if (!emplacement.hasAttribute("id")) {
+            return emplacement;
+        }
+    }
+
+    return null;
 }
 
 /**

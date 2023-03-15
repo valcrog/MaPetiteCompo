@@ -38,14 +38,16 @@ const raz = function(){
  * vide la feuille de match
  */
 const viderFeuilleDeMatch = function(){
-    //TODO
+    const liste = document.querySelector("#feuilleDeMatch ul");
+    liste.innerHTML = "";
 }
 
 /**
  * Réinitialise tous les effectifs du tableau HTML à 0
  */
 const effectifsA0=function(){
-    //TODO
+    const cases = document.querySelectorAll("tbody tr td");
+    cases.forEach(element => element.textContent = "0");
 }
 
 /** 

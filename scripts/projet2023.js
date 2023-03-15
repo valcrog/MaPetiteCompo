@@ -125,6 +125,7 @@ const creerJoueur = function(data){
 	const {id, nom, poste, src} = data;
     const div = document.createElement("div");
     div.classList.add("joueur", poste);
+    div.id = `j-${id}`;
 
     //crée l'image et l'ajoute à la div joueur
     const img = document.createElement("img");

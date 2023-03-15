@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+	<title>PROJET 2023 TW1</title>
+	<meta charset="utf-8"/>
+	<meta name="author" content="Patrice THIBAUD"/>
+	<link href="./styles/mpc.css" type="text/css" rel="stylesheet"/>
+	<link href="./styles/style_ajouts.css" type="text/css" rel="stylesheet"/>
+	<script src="scripts/data/women.js" defer></script>
+	<!--<script src="scripts/data/men.js" defer></script>-->
+	<script src="scripts/projet2023.js" defer></script>
+</head>
+<body>
+	<header>
+		<h1><span>MA</span> <span>PETITE</span> <span>COMPO</span></h1>
+	</header>
+	
+	<main>
+		<div id="zoneSelection">
+			<div id="joueurs">
+			</div>
+			<div id="selection">
+
+			</div>
+		</div>
+
+		<div id="composition">
+			<div id="terrain">
+				<div id="ligneGardien">
+				</div>
+				<div id="ligneDefenseur">
+				</div>
+				<div id="ligneMilieu">
+				</div>
+				<div id="ligneAttaquant">
+				</div>
+			</div>
+			<div id="strategie">
+				<label for="formation">formation : </label>
+				<input type="text" value="433" name = "formation" id="formation"/>
+				<button id="ok">OK</button>
+			</div>
+			<div id="feuilleDeMatch">
+				<h1>Feuille de Match</h1>
+				<img id="check" src="./images/notok.png"/>
+				<ul></ul>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Gardiens</th>
+						<th>Defenseurs</th>
+						<th>Milieux</th>
+						<th>Attaquants</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="gardien">0</td>
+						<td class="defenseur">0</td>
+						<td class="milieu">0</td>
+						<td class="attaquant">0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>	
+	<footer>
+		<strong>Projet TW1 2023 : ma petite compo</strong><br>
+		données issues de <a href="https://www.uefa.com/uefachampionsleague/" target="_blan
+		">uefa.com</a>
+	</footer>
+</body>
+
+</html>

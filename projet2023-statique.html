@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+	<title>MPC- VERSION STATIQUE</title>
+	<meta charset="utf-8"/>
+	<meta name="author" content="Patrice THIBAUD"/>
+	<link href="./styles/mpc.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+	<header>
+		<h1><span>MA</span> <span>PETITE</span> <span>COMPO</span></h1>
+		<strong>VERSION STATIQUE !!</strong>
+	</header>
+	
+	<main>
+		<div id="zoneSelection">
+			<div id="joueurs">
+				<div class="joueur gardien" id="j-250123344">
+					<img src="images/250123344.jpg" alt="Christiane Endler">
+					<div class="nom">Christiane Endler</div>
+					<div class="poste">gardien</div>
+				</div>
+				<div class="joueur defenseur" id="j-250161081" style="opacity: 0.3;">
+					<img src="images/250161081.jpg" alt="Vanessa Gilles">
+					<div class="nom">Vanessa Gilles</div><div class="poste">defenseur</div>
+				</div>
+				<div class="joueur attaquant" id="j-250104511" style="opacity: 0.3;">
+					<img src="images/250104511.jpg" alt="Melvine Mallard"><div class="nom">Melvine Mallard</div>
+					<div class="poste">attaquant</div>
+				</div>
+				<div class="joueur attaquant" id="j-250062981" style="opacity: 0.3;">
+					<img src="images/250062981.jpg" alt="Signe Bruun"><div class="nom">Signe Bruun</div>
+					<div class="poste">attaquant</div>
+				</div>
+				<div class="joueur defenseur" id="j-250082907">
+					<img src="images/250082907.jpg" alt="Ashley Lawrence">
+					<div class="nom">Ashley Lawrence</div><div class="poste">defenseur</div>
+				</div>
+				<div class="joueur milieu" id="j-250005999">
+					<img src="images/250005999.jpg" alt="Lia Wälti"><div class="nom">Lia Wälti</div>
+					<div class="poste">milieu</div>
+				</div>
+				<!--    ......     -->
+			</div>
+			<div id="selection">
+
+			</div>
+		</div>
+
+		<div id="composition">
+			<div id="terrain">
+				<div id="ligneGardien">
+					<div class="positions gardien"></div>
+				</div>
+				<div id="ligneDefenseur">
+					<div class="positions defenseur" style="background-image: url(images/250161081.jpg);" title="Vanessa Gilles" id="p-250161081"></div>
+					<div class="positions defenseur"></div>
+					<div class="positions defenseur"></div>
+					<div class="positions defenseur"></div>
+				</div>
+				<div id="ligneMilieu">
+					<div class="positions milieu"></div>
+					<div class="positions milieu"></div>
+					<div class="positions milieu"></div>
+				</div>
+				<div id="ligneAttaquant">
+					<div class="positions attaquant" style="background-image: url(images/250104511.jpg);" title="Melvine Mallard" id="p-250104511"></div>
+					<div class="positions attaquant" style="background-image: url(images/250062981.jpg);" title="Signe Bruun" id="p-250062981"></div>
+					<div class="positions attaquant"></div>
+				</div>
+			</div>
+			<div id="strategie">
+				<label for="formation">formation : </label>
+				<input type="text" value="433" name = "formation" id="formation"/>
+				<button id="ok">OK</button>
+			</div>
+			<div id="feuilleDeMatch">
+				<h1>Feuille de Match</h1>
+				<img id="check" src="./images/notok.png"/>
+				<ul>
+					<li id="f-250104511">Melvine Mallard</li>
+					<li id="f-250161081">Vanessa Gilles</li>
+					<li id="f-250062981">Signe Bruun</li>
+				</ul>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Gardiens</th>
+						<th>Defenseurs</th>
+						<th>Milieux</th>
+						<th>Attaquants</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="gardien">0</td>
+						<td class="defenseur">1</td>
+						<td class="milieu">0</td>
+						<td class="attaquant">2</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>	
+	<footer>
+		<strong>Projet TW1 2023 : ma petite compo</strong><br>
+		données issues de <a href="https://www.uefa.com/uefachampionsleague/" target="_blan
+		">uefa.com</a>
+	</footer>
+</body>
+
+</html>

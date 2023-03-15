@@ -157,7 +157,10 @@ const creerJoueur = function(data){
  * Abonne les <div> de class "joueur" à la fonction selectionneJoueur pour un click
  */
 const abonneClickJoueurs = function(){
-    //TODO
+    const joueurs = document.querySelectorAll("#zoneSelection div.joueur");
+    joueurs.forEach(element => {
+        element.addEventListener("click", selectionneJoueur);
+    })
 }
 
 /** 

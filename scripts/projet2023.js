@@ -186,7 +186,7 @@ const selectionneJoueur = function(){
 const trouveEmplacement = function(ligne){
     const emplacements = ligne.children;
     for (let emplacement of emplacements) {
-        if (!emplacement.hasAttribute("id")) {
+        if (!emplacement.hasAttribute("id") || emplacement.id == "") {
             return emplacement;
         }
     }

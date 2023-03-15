@@ -55,13 +55,11 @@ const effectifsA0=function(){
  * présentes dans le script utilisé : "men.js" ou "women.js"
  */
 const razZoneJoueurs = function(){
-    //TODO décommenter le code suivant à la question Q6
-
-    /* const joueurs = document.getElementById("joueurs");
+    const joueurs = document.getElementById("joueurs");
     joueurs.innerHTML = "";
 	for(let i = 0; i < playersData.length; i++) {
 		joueurs.appendChild(creerJoueur(playersData[i]));
-	} */
+	}
 }
 
 /*****************************************************
@@ -92,7 +90,7 @@ const changeFormation = function(){
  * @return {Boolean} - true si la formation est valide, false sinon
  */
 const verifFormation = function(formation){
-    let [def, mid, atk] = formation.split("").map(element => parseInt(element)); //on convertit tous les éléments de formation en un Array de nombres
+    const [def, mid, atk] = formation.split("").map(element => parseInt(element)); //on convertit tous les éléments de formation en un Array de nombres
     return (def >= 3 && def <= 5 && mid >= 3 && mid <= 5 && atk >= 1 && atk <= 3 && def+mid+atk == 10); //vérification de la somme et des bornes
 }
 
@@ -123,14 +121,30 @@ const remplirPostes = function(formation){
  * @return {HTMLElement} - div représentant un joueur
  */
 const creerJoueur = function(data){
+    //créer une div joueur
+	const {id, nom, poste, src} = data;
+    const div = document.createElement("div");
+    div.classList.add("joueur", poste);
 
-    //TODO créer une div joueur (attention aux attributs nécessaires)
-	
-	// TODO créer l'image et l'ajouter  à la div joueur
-    
-    // TODO créer les <div> correspondants au nom et au poste et les ajouter  à la div joueur
-    
-    // TODO : relisez bien la documentation
+    //crée l'image et l'ajoute à la div joueur
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = nom;
+    div.appendChild(img);
+
+    //crée les <div> correspondants au nom et au poste et les ajoute à la div joueur
+    const divNom = document.createElement("div");
+    divNom.classList.add("nom");
+    divNom.appendChild(document.createTextNode(nom));
+
+    const divPoste = document.createElement("div");
+    divPoste.classList.add("poste");
+    divPoste.appendChild(document.createTextNode(poste));
+
+    div.appendChild(divNom);
+    div.appendChild(divPoste);
+
+    return div;
 }
 
 

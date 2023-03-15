@@ -218,14 +218,20 @@ const placeJoueur = function(){
         // feuille de match
         const nom = joueurChoisi.querySelector(".nom").textContent;
         emplacementLibre.title = nom;
-        ajouteJoueurListe(nom, id);
-
+        
         // TODO modifier l'image de l'emplacement Libre
+        const src = joueurChoisi.querySelector("img").getAttribute("src");
+        emplacementLibre.style.backgroundImage = `url(${src})`;
 
         // TODO modifier l'id 
+        const id = "p-" + joueurChoisi.id.split("-")[1]
+        emplacementLibre.id = id;
+        ajouteJoueurListe(nom, id);
 
         // TODO Empecher le click dans la zone joueur, et autorise celui dans la zone terrain
-        // pour le joueur choisi 
+        // pour le joueur choisi
+        joueurChoisi.removeEventListener("click", selectionneJoueur);
+        emplacementLibre.addEventListener("click", deselectionneCompo);
 
         // mise à jour des effectifs de la table )
         miseAJourNeffectifs(poste, true);

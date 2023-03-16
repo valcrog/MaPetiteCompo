@@ -273,7 +273,11 @@ const deselectionneCompo = function(){
  * @param {Boolean} plus - true si le joueur est ajouté, false s'il est retiré
  */
 const miseAJourNeffectifs = function(poste, plus){
-    //TODO
+    const compteur = document.querySelector(`td.${poste}`);
+    let compte = parseInt(compteur.textContent);
+    compteur.textContent = plus ? compte+1 : compte-1;
+
+    changeImageComplete(verifCompoComplete());
 }
 
 
@@ -305,7 +309,13 @@ const changeImageComplete = function(complet){
  * @param {String} nom - nom du joueur à retirer
  */
 const enleveJoueurFeuilleMatch = function(nom){
-    //TODO
+    const listeFeuilleMatch = document.getElementById("feuilleDeMatch").querySelector("ul");
+    const joueursFeuilleMatch = listeFeuilleMatch.children;
+    for (const joueur of joueursFeuilleMatch) {
+        if (joueur.textContent == nom) {
+            listeFeuilleMatch.removeChild(joueur);
+        }
+    }
 }
 
 

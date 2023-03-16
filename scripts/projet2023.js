@@ -91,7 +91,7 @@ const changeFormation = function(){
  */
 const verifFormation = function(formation){
     const [def, mid, atk] = formation.split("").map(element => parseInt(element)); //on convertit tous les éléments de formation en un Array de nombres
-    return (def >= 3 && def <= 5 && mid >= 3 && mid <= 5 && atk >= 1 && atk <= 3 && def+mid+atk == 10); //vérification de la somme et des bornes
+    return (def >= 3 && def <= 5 && mid >= 3 && mid <= 5 && atk >= 1 && atk <= 3 && def+mid+atk == EFFECTIF_MAX - 1); //vérification de la somme et des bornes
 }
 
 
@@ -121,19 +121,19 @@ const remplirPostes = function(formation){
  * @return {HTMLElement} - div représentant un joueur
  */
 const creerJoueur = function(data){
-    //créer une div joueur
+    // crée une div joueur
 	const {id, nom, poste, src} = data;
     const div = document.createElement("div");
     div.classList.add("joueur", poste);
     div.id = `j-${id}`;
 
-    //crée l'image et l'ajoute à la div joueur
+    // crée l'image et l'ajoute à la div joueur
     const img = document.createElement("img");
     img.src = src;
     img.alt = nom;
     div.appendChild(img);
 
-    //crée les <div> correspondants au nom et au poste et les ajoute à la div joueur
+    // crée les <div> correspondants au nom et au poste et les ajoute à la div joueur
     const divNom = document.createElement("div");
     divNom.classList.add("nom");
     divNom.appendChild(document.createTextNode(nom));
@@ -219,21 +219,21 @@ const placeJoueur = function(){
         const nom = joueurChoisi.querySelector(".nom").textContent;
         emplacementLibre.title = nom;
         
-        // TODO modifier l'image de l'emplacement Libre
+        // modifie l'image de l'emplacement Libre
         const src = joueurChoisi.querySelector("img").getAttribute("src");
         emplacementLibre.style.backgroundImage = `url(${src})`;
 
-        // TODO modifier l'id 
-        const id = "p-" + joueurChoisi.id.split("-")[1]
+        // modifie l'id 
+        const id = "p-" + joueurChoisi.id.substring(2)
         emplacementLibre.id = id;
         ajouteJoueurListe(nom, id);
 
-        // TODO Empecher le click dans la zone joueur, et autorise celui dans la zone terrain
+        // empeche le click dans la zone joueur, et autorise celui dans la zone terrain
         // pour le joueur choisi
         joueurChoisi.removeEventListener("click", selectionneJoueur);
         emplacementLibre.addEventListener("click", deselectionneCompo);
 
-        // mise à jour des effectifs de la table )
+        // mise à jour des effectifs de la table
         miseAJourNeffectifs(poste, true);
     }
     else     

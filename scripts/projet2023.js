@@ -287,7 +287,7 @@ const miseAJourNeffectifs = function(poste, plus){
  * @returns {Boolean} - true si l'effectif est au complet, false sinon
  */
 const verifCompoComplete = function(){
-    //TODO
+    return document.querySelector("#feuilleDeMatch ul").children.length == EFFECTIF_MAX; 
 }
 
 /*************************************************************
@@ -300,7 +300,8 @@ const verifCompoComplete = function(){
  * @param {Boolean} complet - true si l'effectif est complet, false sinon
  */
 const changeImageComplete = function(complet){
-    i//TODO
+    const image = document.getElementById("check");
+    complet ? image.src = "./images/check.png" : image.src = "./images/notok.png";
 }
 
 

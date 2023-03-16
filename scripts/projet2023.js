@@ -40,6 +40,7 @@ const raz = function(){
 const viderFeuilleDeMatch = function(){
     const liste = document.querySelector("#feuilleDeMatch ul");
     liste.innerHTML = "";
+    changeImageComplete(false);
 }
 
 /**

@@ -19,6 +19,14 @@ footer {
     background-size: auto 90%;
     
     padding-left: 60px;
+    width: 800px;
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: white;
 }
 
 #zoneSelection div.joueur {
@@ -62,4 +70,19 @@ li.capitaine::before {
 }
 li.capitaine {
     color: red;
+}
+
+fieldset {
+    position: absolute;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+}
+
+fieldset div {
+    margin-right: 10px;
+}
+
+#joueurs div.hidden {
+    display: none;
 }

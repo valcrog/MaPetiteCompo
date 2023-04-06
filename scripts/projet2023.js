@@ -369,6 +369,10 @@ function selectionneCapitaine(target) {
 }
 
 
+//TODO
+//Ecoute des boutons "affichage joueurs", qui ajoutent la classe "hidden" aux cartes des joueurs dont le poste
+//ne correspond pas à ceux sélectionnés
+
 /*************************************************************
            ===Initialisation de la page=== 
 ************************************************************/

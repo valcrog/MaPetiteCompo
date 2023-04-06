@@ -6,7 +6,7 @@ const POSTES = ["gardien","defenseur","milieu","attaquant"]; // noms des différ
 const FORMATION_INITIALE="433"; // formation choisie par défaut au lancement
 
 let joueurChoisi; // joueur choisi lors d'un click dans la zone joueurs
-
+let capitaine; //capitaine de l'équipe
 
 /**
  * initialisation
@@ -232,8 +232,16 @@ const placeJoueur = function(){
         // empeche le click dans la zone joueur, et autorise celui dans la zone terrain
         // pour le joueur choisi
         joueurChoisi.removeEventListener("click", selectionneJoueur);
-        emplacementLibre.addEventListener("click", deselectionneCompo);
 
+        const boutonCapitaine = document.createElement("button");
+        boutonCapitaine.id = "b-" + joueurChoisi.id.substring(2);
+        boutonCapitaine.addEventListener("click", e => {
+            selectionneCapitaine(e.target);
+            e.stopPropagation();
+        });
+        emplacementLibre.appendChild(boutonCapitaine);
+        
+        emplacementLibre.addEventListener("click", deselectionneCompo);
         // mise à jour des effectifs de la table
         miseAJourNeffectifs(poste, true);
     }
@@ -256,6 +264,7 @@ const deselectionneCompo = function(){
     this.title="";
     this.style="";
     this.id="";
+    this.innerHTML="";
     enleveJoueurFeuilleMatch()
     miseAJourNeffectifs(poste, false);
 }
@@ -333,6 +342,30 @@ const ajouteJoueurListe = function(nom, id){
     li.textContent = nom;
     li.id =  "f-"+id.substring(2)
     liste.appendChild(li)
+}
+
+/*************************************************************
+                         ===Ajouts=== 
+************************************************************/
+
+
+/**
+ * ajoute la classe capitaine à l'élément sélectionné
+ * @param {Element} target 
+ */
+function selectionneCapitaine(target) {
+    const nvCapitaine = target.id.substring(2);
+    if (capitaine) {
+        //on enlève la classe capitaine à l'ancien capitaine (s'il existe)
+        document.getElementById("f-" + capitaine).classList.remove("capitaine");
+        document.getElementById("p-" + capitaine).classList.remove("capitaine");
+    }
+    if (capitaine != nvCapitaine) {
+        capitaine = nvCapitaine; //on remplace l'id de l'ancien capitaine par le nouveau
+        //on ajoute la classe capitaine au nouveau
+        document.getElementById("f-" + capitaine).classList.add("capitaine");
+        document.getElementById("p-" + capitaine).classList.add("capitaine");
+    }
 }
 
 

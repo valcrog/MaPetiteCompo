@@ -1,0 +1,12 @@
+Projet réalisé par :
+Louis BECUE, Valentin CROGIEZ, Gildas LETOMBE
+
+Toutes les questions de l'énoncé ont été traitées.
+
+Fonctionnalités supplémentaires :
+-> Il est possible de choisir un capitaine en cliquant sur le petit bouton qui apparait
+au survol de chacun des joueurs sur le terrain. Le capitaine sélectionné est entouré en
+rouge sur le terrain, et est précisé sur la feuille de match par la couleur rouge et le
+(C) précédent son prénom.
+-> Dans la zone de sélection, il est possible de sélectionner les postes à afficher, dans
+l'optique de faciliter la composition d'une équipe. Par défaut, tous les postes sont affichés.

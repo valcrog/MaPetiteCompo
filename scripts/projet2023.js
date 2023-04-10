@@ -16,8 +16,8 @@ const init = function(){
     remplirPostes(FORMATION_INITIALE);
     const ok = document.getElementById("ok");
     ok.addEventListener("click", changeFormation);
-    const recherche = document.getElementById("recherche");
-    recherche.addEventListener("click", add_hidden);
+    const recherches = document.querySelectorAll("fieldset input");
+    recherches.forEach(recherche => recherche.addEventListener("change", add_hidden))
 }
 
 
@@ -378,6 +378,14 @@ function selectionneCapitaine(target) {
  * ajoute la class "hidden" qui efface de la liste les postes non selectionné
  */
 function add_hidden(){
+    if (this.id != "affT") {
+        document.getElementById("affT").checked = false
+    } else {
+        document.querySelectorAll("#affA, #affM, #affD, #affG").forEach(ele => ele.checked = false)
+    }
+    if (Array.from(document.querySelectorAll("fieldset input")).every(ele => !ele.checked)) {
+        document.getElementById("affT").click();
+    }
     tab = checked_poste();
     const joueurs = document.querySelectorAll("#zoneSelection div.joueur");
     joueurs.forEach(element => {

@@ -16,6 +16,8 @@ const init = function(){
     remplirPostes(FORMATION_INITIALE);
     const ok = document.getElementById("ok");
     ok.addEventListener("click", changeFormation);
+    const recherche = document.getElementById("recherche");
+    recherche.addEventListener("click", add_hidden);
 }
 
 
@@ -372,6 +374,46 @@ function selectionneCapitaine(target) {
 //TODO
 //Ecoute des boutons "affichage joueurs", qui ajoutent la classe "hidden" aux cartes des joueurs dont le poste
 //ne correspond pas à ceux sélectionnés
+/**
+ * ajoute la class "hidden" qui efface de la liste les postes non selectionné
+ */
+function add_hidden(){
+    tab = checked_poste();
+    const joueurs = document.querySelectorAll("#zoneSelection div.joueur");
+    joueurs.forEach(element => {
+        if (element.classList.contains("hidden")){
+            element.classList.remove("hidden");
+        }
+        if (tab.includes(element.className.substring(7))) {
+            element.classList.add("hidden");
+        }})}
+
+/**
+ * creer un tableau des postes selectionnés et donc a ne pas afficher
+ * @returns {Array}
+ */
+function checked_poste(){
+    let liste = []
+    if ((document.getElementById("affT").checked)){
+        liste = []
+    }
+    else{
+        if(!(document.getElementById("affG").checked)){
+            liste.push("gardien");
+        }
+        if(!(document.getElementById("affD").checked)){
+            liste.push("defenseur");
+        }
+        if(!(document.getElementById("affM").checked)){
+            liste.push("milieu");
+        }
+        if(!(document.getElementById("affA").checked)){
+            liste.push("attaquant");
+        }
+    }
+    return liste
+}
+
 
 /*************************************************************
            ===Initialisation de la page=== 

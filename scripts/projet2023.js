@@ -267,6 +267,10 @@ const deselectionneCompo = function(){
     this.style="";
     this.id="";
     this.innerHTML="";
+    if (this.classList.contains("capitaine")) {
+        this.classList.remove("capitaine");
+        capitaine = "";
+    }
     enleveJoueurFeuilleMatch()
     miseAJourNeffectifs(poste, false);
 }
@@ -367,13 +371,11 @@ function selectionneCapitaine(target) {
         //on ajoute la classe capitaine au nouveau
         document.getElementById("f-" + capitaine).classList.add("capitaine");
         document.getElementById("p-" + capitaine).classList.add("capitaine");
+    } else {
+        capitaine = "";
     }
 }
 
-
-//TODO
-//Ecoute des boutons "affichage joueurs", qui ajoutent la classe "hidden" aux cartes des joueurs dont le poste
-//ne correspond pas à ceux sélectionnés
 /**
  * ajoute la class "hidden" qui efface de la liste les postes non selectionné
  */
